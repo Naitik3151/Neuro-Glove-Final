@@ -559,7 +559,7 @@ async function openSerial(){
   if(!('serial' in navigator)){ alert('Web Serial not supported. Use Chrome/Edge on HTTPS.'); return; }
   try{
     port = await navigator.serial.requestPort();
-    await port.open({ baudRate: 115200 });
+    await port.open({ baudRate: 9600 });
     appendMonitor('Serial port opened', 'in');
     document.getElementById('disconnect').style.display='inline-block';
     document.getElementById('serialOpen').style.display='none';
@@ -632,4 +632,5 @@ setTimeout(()=> appendMonitor('Hand open','in'), 1400);
 </script>
 </body>
 </html>
+
 
